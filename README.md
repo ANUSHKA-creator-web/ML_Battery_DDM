@@ -3,7 +3,7 @@
 ## 📌 Project Overview
 This project focuses on **predicting the capacity degradation of Li-ion batteries** over charge-discharge cycles using multiple machine learning models. Battery degradation is a critical factor in Electric Vehicle (EV) performance and lifespan, and accurate prediction enables better **battery health monitoring, predictive maintenance, and lifecycle management**.
 
-The dataset consists of **battery cycle life data** where the battery capacity decreases with each cycle. Multiple machine learning regression models are trained and compared against true battery capacity degradation curves.
+The dataset consists of **battery cycle life data** (from CSVs `B0005.csv`, `B0006.csv`, `B0007.csv`, `B0018.csv`), where the battery capacity decreases with each cycle. Multiple machine learning regression models are trained and compared against true battery capacity degradation curves.
 
 ---
 
@@ -17,29 +17,45 @@ The following regression models were used:
 
 ---
 
-## 📊 Results & Analysis
+## 📊 Results
 
-### 1. **Predicted vs True Capacity**
-![Battery Prediction](B_2.png)
+### 📌 Performance Metrics
+| Model            | RMSE ↓   | R² ↑   |
+|------------------|----------|--------|
+| KNN              | ~        | ~      |
+| Random Forest    | ~        | ~      |
+| Gradient Boosting| ~        | ~      |
+| SVR              | ~        | ~      |
+| Ridge Regression | ~        | ~      |
 
-- The **black line** represents the **true battery capacity**.
-- Colored dots represent predictions from different models.
-- Observations:
-  - **SVR** and **Ridge Regression** tend to capture smooth degradation but with some bias.
-  - **Random Forest** and **Gradient Boosting** follow true capacity closely, though with slight overfitting on noise.
-  - **KNN** predictions are more scattered and sensitive to local fluctuations.
+> **Note:** Fill in the actual RMSE and R² values from your notebook runs.
 
 ---
 
-### 2. **Smoothed Model Comparison**
-![Smoothed Comparison](B_1.png)
+### 1️⃣ True vs Predicted Capacity (Raw Scatter)
+![Battery Prediction](B_1.png)
 
-- Curves represent **average smoothed predictions** vs. true capacity.
-- Observations:
-  - **Gradient Boosting** and **Random Forest** achieve the closest match to true degradation trends.
-  - **SVR** shows a slightly higher prediction at early cycles but aligns well later.
-  - **Ridge Regression** underestimates capacity at later cycles.
-  - **KNN** is less stable compared to ensemble methods.
+- Black dots: **True battery capacity**
+- Colored scatter: Model predictions
+- Shows raw fit and spread of predictions
+
+---
+
+### 2️⃣ Train vs Test Predictions
+![Train vs Test](B_3.png)
+
+- Transparent scatter = **Training predictions**
+- Brighter scatter = **Test predictions**
+- Helps check **overfitting/generalization**
+
+---
+
+### 3️⃣ Smoothed Model Comparison
+![Smoothed Comparison](B_2.png)
+
+- Curves represent **average smoothed predictions per cycle**
+- Black line = true degradation
+- Easier to compare long-term degradation trends
 
 ---
 
