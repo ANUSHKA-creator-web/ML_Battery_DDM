@@ -20,7 +20,7 @@ The following regression models were used:
 ## 📊 Results & Analysis
 
 ### 1. **Predicted vs True Capacity**
-![Battery Prediction](B_1.png)
+![Battery Prediction](B_2.png)
 
 - The **black line** represents the **true battery capacity**.
 - Colored dots represent predictions from different models.
@@ -32,7 +32,7 @@ The following regression models were used:
 ---
 
 ### 2. **Smoothed Model Comparison**
-![Smoothed Comparison](B_2.png)
+![Smoothed Comparison](B_1.png)
 
 - Curves represent **average smoothed predictions** vs. true capacity.
 - Observations:
