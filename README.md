@@ -16,32 +16,37 @@ The following regression models were used:
 - **Ridge Regression**
 
 ---
-
 ## 📊 Results
 
 ### 📌 Performance Metrics
 | Model            | RMSE ↓   | R² ↑   |
 |------------------|----------|--------|
-| KNN              | ~        | ~      |
-| Random Forest    | ~        | ~      |
-| Gradient Boosting| ~        | ~      |
-| SVR              | ~        | ~      |
-| Ridge Regression | ~        | ~      |
-
-> **Note:** Fill in the actual RMSE and R² values from your notebook runs.
+| KNN              | 0.0099   | 0.9973 |
+| Random Forest    | 0.0058   | 0.9991 |
+| Gradient Boosting| 0.0189   | 0.9902 |
+| SVR              | 0.0458   | 0.9424 |
+| Ridge Regression | 0.0670   | 0.8766 |
 
 ---
 
 ### 1️⃣ True vs Predicted Capacity (Raw Scatter)
-![Battery Prediction](B_1.png)
+![Battery Prediction](B_2.png)
 
 - Black dots: **True battery capacity**
 - Colored scatter: Model predictions
 - Shows raw fit and spread of predictions
 
 ---
+### 2️⃣Smoothed Model Comparison
+![Smoothed Comparison](B_1.png)
 
-### 2️⃣ Train vs Test Predictions
+- Curves represent **average smoothed predictions per cycle**
+- Black line = true degradation
+- Easier to compare long-term degradation trends
+
+---
+
+### 3️⃣ Train vs Test Predictions
 ![Train vs Test](B_3.png)
 
 - Transparent scatter = **Training predictions**
@@ -50,14 +55,7 @@ The following regression models were used:
 
 ---
 
-### 3️⃣ Smoothed Model Comparison
-![Smoothed Comparison](B_2.png)
 
-- Curves represent **average smoothed predictions per cycle**
-- Black line = true degradation
-- Easier to compare long-term degradation trends
-
----
 
 ## ✅ Key Insights
 - Ensemble models (**Random Forest, Gradient Boosting**) provided the most accurate predictions overall.
